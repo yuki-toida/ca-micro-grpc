@@ -5,15 +5,16 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/go-kit/kit/log"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/yuki-toida/grpc-clean/server-client/adapter/repositories/repository_email"
-	"github.com/yuki-toida/grpc-clean/server-client/adapter/repositories/repository_profile"
-	"github.com/yuki-toida/grpc-clean/server-client/adapter/repositories/repository_user"
-	"github.com/yuki-toida/grpc-clean/server-client/external/config"
-	"github.com/yuki-toida/grpc-clean/server-client/external/mysql"
-	"github.com/yuki-toida/grpc-clean/server-client/external/web"
-	"github.com/yuki-toida/grpc-clean/server-client/registry"
+
+	"github.com/go-kit/kit/log"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_email"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_profile"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_user"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/external/config"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/external/mysql"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/external/web"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/registry"
 )
 
 func main() {

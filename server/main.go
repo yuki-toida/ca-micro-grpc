@@ -4,7 +4,7 @@ import (
 	"context"
 	"net"
 
-	"github.com/yuki-toida/grpc-clean/server/pb"
+	"github.com/yuki-toida/ca-micro-grpc/server/pb"
 	"google.golang.org/grpc"
 )
 
@@ -15,7 +15,9 @@ func main() {
 	}
 	server := grpc.NewServer()
 	pb.RegisterTestServer(server, &Server{})
-	server.Serve(listener)
+	if err := server.Serve(listener); err != nil {
+		panic(err)
+	}
 }
 
 type Server struct{}

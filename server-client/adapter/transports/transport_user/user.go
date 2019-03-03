@@ -9,7 +9,7 @@ import (
 
 	"github.com/go-kit/kit/endpoint"
 	"github.com/gorilla/mux"
-	"github.com/yuki-toida/grpc-clean/server-client/application/usecase/usecase_user"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/application/usecase/usecase_user"
 )
 
 func MakeFindEndpoint(u usecase_user.UseCase) endpoint.Endpoint {

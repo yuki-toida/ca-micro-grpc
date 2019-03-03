@@ -1,7 +1,7 @@
 package usecase_user
 
 import (
-	"github.com/yuki-toida/grpc-clean/server-client/domain/entities/entity_user"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_user"
 )
 
 type UseCase interface {

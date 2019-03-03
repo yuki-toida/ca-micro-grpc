@@ -7,7 +7,7 @@ import (
 	"strconv"
 
 	"github.com/go-kit/kit/endpoint"
-	"github.com/yuki-toida/grpc-clean/server-client/application/usecase/usecase_email"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/application/usecase/usecase_email"
 )
 
 func MakeUpdateEndpoint(u usecase_email.UseCase) endpoint.Endpoint {

@@ -2,8 +2,8 @@ package repository_email
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/yuki-toida/grpc-clean/server-client/domain/entities"
-	"github.com/yuki-toida/grpc-clean/server-client/domain/entities/entity_email"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_email"
 )
 
 type Email struct {

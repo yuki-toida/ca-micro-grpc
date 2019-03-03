@@ -1,11 +1,11 @@
 package registry
 
 import (
-	"github.com/yuki-toida/grpc-clean/server-client/application/interactors/interactor_email"
-	"github.com/yuki-toida/grpc-clean/server-client/application/interactors/interactor_user"
-	"github.com/yuki-toida/grpc-clean/server-client/application/usecase/usecase_email"
-	"github.com/yuki-toida/grpc-clean/server-client/application/usecase/usecase_user"
-	"github.com/yuki-toida/grpc-clean/server-client/registry/interfaces"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/application/interactors/interactor_email"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/application/interactors/interactor_user"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/application/usecase/usecase_email"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/application/usecase/usecase_user"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/registry/interfaces"
 )
 
 type useCases struct {

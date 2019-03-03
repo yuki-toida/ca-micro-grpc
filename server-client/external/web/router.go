@@ -7,9 +7,9 @@ import (
 
 	transport "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
-	"github.com/yuki-toida/grpc-clean/server-client/adapter/transports/transport_email"
-	"github.com/yuki-toida/grpc-clean/server-client/adapter/transports/transport_user"
-	"github.com/yuki-toida/grpc-clean/server-client/registry/interfaces"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/transports/transport_email"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/transports/transport_user"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/registry/interfaces"
 )
 
 func Handle(u interfaces.UseCases) http.Handler {

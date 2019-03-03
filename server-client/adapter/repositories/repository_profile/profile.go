@@ -2,8 +2,8 @@ package repository_profile
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/yuki-toida/grpc-clean/server-client/domain/entities"
-	"github.com/yuki-toida/grpc-clean/server-client/domain/entities/entity_profile"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities"
+	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_profile"
 )
 
 type Profile struct {
