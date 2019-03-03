@@ -20,6 +20,6 @@ func main() {
 
 type Server struct{}
 
-func (s *Server) Get(c context.Context, r *pb.Request) (*pb.Response, error) {
+func (s *Server) Get(_ context.Context, r *pb.Request) (*pb.Response, error) {
 	return &pb.Response{Message: r.Message}, nil
 }

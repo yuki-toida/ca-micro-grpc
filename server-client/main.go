@@ -36,12 +36,13 @@ func main() {
 		}
 	}
 
-	repository := registry.NewRepository(db)
-	usecase := registry.NewUseCase(repository)
-	handler := web.Handle(usecase)
+	repositories := registry.NewRepositories(db)
+	usecases := registry.NewUseCases(repositories)
+	handler := web.Handle(usecases)
 
 	port := ":8080"
 	logger := log.NewLogfmtLogger(os.Stderr)
 	logger.Log("msg", "HTTP", "addr", port)
 	logger.Log("err", http.ListenAndServe(port, handler))
+
 }

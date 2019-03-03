@@ -6,7 +6,7 @@ import (
 	"github.com/yuki-toida/grpc-clean/server-client/domain/entities/entity_user"
 )
 
-type Repository interface {
+type Repositories interface {
 	NewUserRepository() entity_user.Repository
 	NewProfileRepository() entity_profile.Repository
 	NewEmailRepository() entity_email.Repository

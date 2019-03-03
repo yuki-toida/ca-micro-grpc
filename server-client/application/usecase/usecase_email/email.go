@@ -5,6 +5,5 @@ import (
 )
 
 type UseCase interface {
-	Create(userID uint64, emailAddr string) (*entity_email.Email, error)
 	Update(emailID uint64, emailAddr string) (*entity_email.Email, error)
 }

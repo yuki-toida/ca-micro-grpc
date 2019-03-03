@@ -1,6 +1,7 @@
 package interactor_user
 
 import (
+	"github.com/yuki-toida/grpc-clean/server-client/domain/entities/entity_email"
 	"github.com/yuki-toida/grpc-clean/server-client/domain/entities/entity_profile"
 	"github.com/yuki-toida/grpc-clean/server-client/domain/entities/entity_user"
 )
@@ -8,10 +9,11 @@ import (
 type interactor struct {
 	userRepository    entity_user.Repository
 	profileRepository entity_profile.Repository
+	emailRepository   entity_email.Repository
 }
 
-func New(ur entity_user.Repository, pr entity_profile.Repository) *interactor {
-	return &interactor{userRepository: ur, profileRepository: pr}
+func New(ur entity_user.Repository, pr entity_profile.Repository, er entity_email.Repository) *interactor {
+	return &interactor{userRepository: ur, profileRepository: pr, emailRepository: er}
 }
 
 func (i *interactor) Find() ([]entity_user.User, error) {
@@ -38,4 +40,19 @@ func (i *interactor) Create(name string) (*entity_user.User, error) {
 func (i *interactor) Delete(userID uint64) error {
 	user := entity_user.New(i.userRepository)
 	return user.Delete(userID)
+}
+
+func (i *interactor) CreateEmail(userID uint64, emailAddr string) (*entity_user.User, error) {
+	eu := entity_user.New(i.userRepository)
+	user, err := eu.First(userID)
+	if err != nil {
+		return nil, err
+	}
+	ee := entity_email.New(i.emailRepository)
+	email, err := ee.Create(userID, emailAddr)
+	if err != nil {
+		return nil, err
+	}
+	eu.AddEmail(user, email)
+	return user, nil
 }

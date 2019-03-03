@@ -35,3 +35,7 @@ func (u *user) Create(profile *entity_profile.Profile) (*User, error) {
 func (u *user) Delete(userID uint64) error {
 	return u.repository.Delete(userID)
 }
+
+func (u *user) AddEmail(user *User, email *entity_email.Email) {
+	user.Emails = append(user.Emails, *email)
+}

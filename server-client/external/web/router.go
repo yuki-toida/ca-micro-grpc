@@ -12,7 +12,7 @@ import (
 	"github.com/yuki-toida/grpc-clean/server-client/registry/interfaces"
 )
 
-func Handle(u interfaces.UseCase) http.Handler {
+func Handle(u interfaces.UseCases) http.Handler {
 	router := mux.NewRouter()
 
 	uu := u.NewUserUseCase()
@@ -36,13 +36,13 @@ func Handle(u interfaces.UseCase) http.Handler {
 		transport_user.DecodeDeleteRequest,
 		encodeResponse,
 	))
-
-	eu := u.NewEmailUseCase()
-	router.Methods("POST").Path("/emails").Handler(transport.NewServer(
-		transport_email.MakeCreateEndpoint(eu),
-		transport_email.DecodeCreateRequest,
+	router.Methods("POST").Path("/users/{uid}/emails").Handler(transport.NewServer(
+		transport_user.MakeCreateEmailEndpoint(uu),
+		transport_user.DecodeCreateEmailRequest,
 		encodeResponse,
 	))
+
+	eu := u.NewEmailUseCase()
 	router.Methods("PATCH").Path("/emails").Handler(transport.NewServer(
 		transport_email.MakeUpdateEndpoint(eu),
 		transport_email.DecodeUpdateRequest,

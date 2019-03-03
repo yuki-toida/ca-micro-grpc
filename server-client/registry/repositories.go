@@ -11,22 +11,22 @@ import (
 	"github.com/yuki-toida/grpc-clean/server-client/registry/interfaces"
 )
 
-type repository struct {
+type repositories struct {
 	db *gorm.DB
 }
 
-func NewRepository(db *gorm.DB) interfaces.Repository {
-	return &repository{db: db}
+func NewRepositories(db *gorm.DB) interfaces.Repositories {
+	return &repositories{db: db}
 }
 
-func (r *repository) NewUserRepository() entity_user.Repository {
+func (r *repositories) NewUserRepository() entity_user.Repository {
 	return repository_user.New(r.db)
 }
 
-func (r *repository) NewProfileRepository() entity_profile.Repository {
+func (r *repositories) NewProfileRepository() entity_profile.Repository {
 	return repository_profile.New(r.db)
 }
 
-func (r *repository) NewEmailRepository() entity_email.Repository {
+func (r *repositories) NewEmailRepository() entity_email.Repository {
 	return repository_email.New(r.db)
 }

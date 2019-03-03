@@ -5,7 +5,7 @@ import (
 	"github.com/yuki-toida/grpc-clean/server-client/application/usecase/usecase_user"
 )
 
-type UseCase interface {
+type UseCases interface {
 	NewUserUseCase() usecase_user.UseCase
 	NewEmailUseCase() usecase_email.UseCase
 }
