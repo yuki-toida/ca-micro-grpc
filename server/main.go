@@ -2,26 +2,33 @@ package main
 
 import (
 	"context"
-	"net"
-
-	"github.com/yuki-toida/ca-micro-grpc/server/pb"
+	"github.com/go-kit/kit/log"
 	"google.golang.org/grpc"
+	"net"
+	"os"
+	"server/pb"
 )
 
 func main() {
-	listener, err := net.Listen("tcp", ":50051")
+	logger := log.NewLogfmtLogger(os.Stderr)
+
+	// The gRPC listener mounts the Go kit gRPC server we created.
+	grpcListener, err := net.Listen("tcp", ":8081")
 	if err != nil {
-		panic(err)
+		logger.Log("transport", "gRPC", "during", "Listen", "err", err)
+		os.Exit(1)
 	}
+	defer grpcListener.Close()
+
 	server := grpc.NewServer()
-	pb.RegisterTestServer(server, &Server{})
-	if err := server.Serve(listener); err != nil {
-		panic(err)
-	}
+	pb.RegisterAddressServer(server, &Server{})
+
+	logger.Log("err", server.Serve(grpcListener))
 }
 
 type Server struct{}
 
 func (s *Server) Get(_ context.Context, r *pb.Request) (*pb.Response, error) {
-	return &pb.Response{Message: r.Message}, nil
+	address := r.Email + "@hacobu.jp"
+	return &pb.Response{EmailAddress: address}, nil
 }

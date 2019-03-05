@@ -5,22 +5,22 @@ import (
 	"os"
 	"strconv"
 
+	"github.com/go-kit/kit/log"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 
-	"github.com/go-kit/kit/log"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_email"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_profile"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_user"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/external/config"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/external/mysql"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/external/web"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/registry"
+	"server-client/adapter/repositories/repository_email"
+	"server-client/adapter/repositories/repository_profile"
+	"server-client/adapter/repositories/repository_user"
+	"server-client/external/config"
+	"server-client/external/mysql"
+	"server-client/external/web"
+	"server-client/registry"
 )
 
 func main() {
 	c := config.Load()
 	db := mysql.Connect(c.DB.User, c.DB.Password, c.DB.Host, c.DB.Port, c.DB.Name)
-	defer mysql.Close()
+	defer db.Close()
 
 	db.LogMode(true)
 	db.DropTableIfExists(&repository_user.User{}, &repository_profile.Profile{}, &repository_email.Email{})

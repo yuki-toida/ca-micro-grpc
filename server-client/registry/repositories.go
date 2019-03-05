@@ -2,13 +2,13 @@ package registry
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_email"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_profile"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_user"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_email"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_profile"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_user"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/registry/interfaces"
+	"server-client/adapter/repositories/repository_email"
+	"server-client/adapter/repositories/repository_profile"
+	"server-client/adapter/repositories/repository_user"
+	"server-client/domain/entities/entity_email"
+	"server-client/domain/entities/entity_profile"
+	"server-client/domain/entities/entity_user"
+	"server-client/registry/interfaces"
 )
 
 type repositories struct {

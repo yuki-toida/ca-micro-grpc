@@ -1,9 +1,9 @@
 package entity_user
 
 import (
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_email"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_profile"
+	"server-client/domain/entities"
+	"server-client/domain/entities/entity_email"
+	"server-client/domain/entities/entity_profile"
 )
 
 type User struct {

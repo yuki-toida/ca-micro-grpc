@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "pb";
+
+package proto;
+
+service Address {
+  rpc Get (Request) returns (Response);
+}
+
+message Request {
+  string Email = 1;
+}
+
+message Response {
+  string EmailAddress = 1;
+}

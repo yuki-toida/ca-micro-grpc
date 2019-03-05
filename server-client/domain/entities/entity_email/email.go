@@ -1,6 +1,6 @@
 package entity_email
 
-import "github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities"
+import "server-client/domain/entities"
 
 type Email struct {
 	entities.Model

@@ -1,7 +1,7 @@
 package entity_user
 
 import (
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_profile"
+	"server-client/domain/entities/entity_profile"
 )
 
 type Repository interface {

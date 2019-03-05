@@ -1,6 +1,6 @@
 package entity_profile
 
-import "github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities"
+import "server-client/domain/entities"
 
 type Profile struct {
 	entities.Model

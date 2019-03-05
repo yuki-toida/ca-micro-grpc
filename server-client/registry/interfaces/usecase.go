@@ -1,8 +1,8 @@
 package interfaces
 
 import (
-	"github.com/yuki-toida/ca-micro-grpc/server-client/application/usecase/usecase_email"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/application/usecase/usecase_user"
+	"server-client/application/usecase/usecase_email"
+	"server-client/application/usecase/usecase_user"
 )
 
 type UseCases interface {

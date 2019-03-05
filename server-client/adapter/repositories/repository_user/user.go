@@ -2,12 +2,12 @@ package repository_user
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_email"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/adapter/repositories/repository_profile"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_email"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_profile"
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_user"
+	"server-client/adapter/repositories/repository_email"
+	"server-client/adapter/repositories/repository_profile"
+	"server-client/domain/entities"
+	"server-client/domain/entities/entity_email"
+	"server-client/domain/entities/entity_profile"
+	"server-client/domain/entities/entity_user"
 )
 
 type User struct {

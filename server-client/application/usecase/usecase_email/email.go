@@ -1,7 +1,7 @@
 package usecase_email
 
 import (
-	"github.com/yuki-toida/ca-micro-grpc/server-client/domain/entities/entity_email"
+	"server-client/domain/entities/entity_email"
 )
 
 type UseCase interface {
